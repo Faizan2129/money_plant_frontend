@@ -1,0 +1,73 @@
+/* About Us Card Section */
+.about-us-card-section {
+    background-color: #f9f9f9;
+    color: #333;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  /* Card Styling */
+  .about-us-card-section .card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .about-us-card-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Title and Text */
+  .about-us-card-section .card-title {
+    font-size: 1.8rem;
+    color: #007bff;
+  }
+  
+  .about-us-card-section .card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .about-us-card-section ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .about-us-card-section ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .about-us-card-section ul li::before {
+    content: "\2022";  /* Bullet point */
+    color: #007bff;  /* Blue color for bullet point */
+    font-size: 1.5rem;
+    position: absolute;
+    left: -25px;
+    top: 0;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .about-us-card-section .card {
+      padding: 15px;
+    }
+  
+    .about-us-card-section .card-title {
+      font-size: 1.5rem;
+    }
+  
+    .about-us-card-section .card-text {
+      font-size: 1rem;
+    }
+  
+    .about-us-card-section ul li {
+      font-size: 1rem;
+    }
+  }
+  

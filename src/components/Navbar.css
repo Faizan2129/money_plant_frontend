@@ -1,0 +1,79 @@
+/* Navbar Styles */
+.navbar {
+    background-color: #f8f9fa; /* Light background color for navbar */
+  }
+  
+  /* Navbar Button Styles */
+  .navbar-nav .nav-item .btn {
+    border-radius: 30px;  /* Rounded edges for a sleek look */
+    font-weight: 600; /* Bold text */
+    text-align: center; /* Ensure text is centered */
+    transition: all 0.3s ease; /* Smooth hover transition */
+    padding: 10px 30px; /* Increase button size for better click area */
+  }
+  
+  /* Sign Up Button */
+  .navbar-nav .nav-item .btn-primary {
+    background-color: #007bff; /* Primary blue background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+  }
+  
+  /* Sign Up Button Hover Effect */
+  .navbar-nav .nav-item .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white; /* Keep text color white */
+  }
+  
+  /* Login Button (Outline Style) */
+  .navbar-nav .nav-item .btn-outline-primary {
+    background-color: transparent; /* Transparent background */
+    border-color: #007bff; /* Blue border */
+    color: #007bff; /* Blue text */
+  }
+  
+  /* Login Button Hover Effect */
+  .navbar-nav .nav-item .btn-outline-primary:hover {
+    background-color: #007bff; /* Blue background on hover */
+    border-color: #0056b3; /* Darker border on hover */
+    color: white; /* White text on hover */
+  }
+  
+  /* Additional Navbar Link Styles */
+  .navbar-nav .nav-item .nav-link {
+    font-weight: 500; /* Slightly bold text for navigation links */
+    color: #333; /* Dark text for links */
+    padding: 8px 16px; /* Add some padding to navbar links */
+    text-align: center; /* Align text to the center */
+  }
+  
+  /* Navbar Link Hover */
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #007bff; /* Blue color on hover for all links */
+    text-decoration: none; /* Remove underline from hover */
+  }
+  
+  /* Logo Styles */
+  .navbar-brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px; /* Add some space between logo and text */
+  }
+  
+  /* Navbar Toggler Button */
+  .navbar-toggler {
+    border-color: #007bff; /* Blue color for the toggle button */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #007bff; /* Blue color for the toggler icon */
+  }
+  
+  /* Navbar Container Padding */
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  
+  
