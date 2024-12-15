@@ -1,26 +1,29 @@
 import React from "react";
-import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 import Home from "./components/Home";
-import AboutUs from "./components/AboutUs";
-import "bootstrap/dist/css/bootstrap.min.css";
-import ContactUs from "./components/Contact";
+import Navbar from "./components/Navbar";
+import Dashboard from "./components/Dashboard";
+import Track from "./components/Track";
+import Goal from "./components/Goal";
 
 function App() {
   return (
-    <div>
-      {/* Navbar */}
+    <Router>
+      {/* Navbar is outside Routes so it's always visible */}
       <Navbar />
-
-      {/* Home Section (Hero, Features, Reviews) */}
-      <Home />
-      <AboutUs />
-      <ContactUs />
       
-      {/* Optional Footer */}
-      <footer className="text-center py-4 bg-light">
-        <p>&copy; 2024 MoneyPlant. All rights reserved.</p>
-      </footer>
-    </div>
+      {/* Routes for different pages */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/track" element={<Track />} />
+        <Route path="/goal" element={<Goal />} />
+      </Routes>
+    </Router>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './Contact.css';
+import axios from "axios";
+import "./Contact.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function ContactUs() {
@@ -8,6 +9,8 @@ function ContactUs() {
     email: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [feedback, setFeedback] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({
@@ -16,12 +19,22 @@ function ContactUs() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here (e.g., sending to an API or email service)
-    console.log(formData);
-    alert("Message sent successfully!");
-    setFormData({ name: "", email: "", message: "" }); // Reset form
+    setLoading(true);
+    setFeedback({ type: "", message: "" });
+
+    try {
+      const response = await axios.post("http://localhost:7002/contact", formData);
+      console.log("Message sent successfully:", response.data);
+      setFeedback({ type: "success", message: "Message sent successfully!" });
+      setFormData({ name: "", email: "", message: "" }); // Reset form
+    } catch (err) {
+      console.error("Error sending message:", err.response ? err.response.data : err.message);
+      setFeedback({ type: "error", message: "Failed to send message. Please try again later." });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -34,6 +47,16 @@ function ContactUs() {
           <div className="col-md-6 mx-auto">
             <div className="card mb-4">
               <div className="card-body">
+                {feedback.message && (
+                  <div
+                    className={`alert ${
+                      feedback.type === "success" ? "alert-success" : "alert-danger"
+                    }`}
+                    role="alert"
+                  >
+                    {feedback.message}
+                  </div>
+                )}
                 <form onSubmit={handleSubmit}>
                   <div className="mb-3">
                     <label htmlFor="name" className="form-label">
@@ -46,6 +69,7 @@ function ContactUs() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      placeholder="Enter your name"
                       required
                     />
                   </div>
@@ -61,6 +85,7 @@ function ContactUs() {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      placeholder="Enter your email"
                       required
                     />
                   </div>
@@ -76,12 +101,13 @@ function ContactUs() {
                       rows="5"
                       value={formData.message}
                       onChange={handleChange}
+                      placeholder="Enter your message"
                       required
                     ></textarea>
                   </div>
 
-                  <button type="submit" className="btn btn-primary w-100">
-                    Send Message
+                  <button type="submit" className="btn btn-primary w-100" disabled={loading}>
+                    {loading ? "Sending..." : "Send Message"}
                   </button>
                 </form>
               </div>

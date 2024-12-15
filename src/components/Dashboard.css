@@ -1,0 +1,50 @@
+.dashboard-container {
+    min-height: 100vh;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  .table {
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .table thead {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  .table-responsive {
+    margin-top: 20px;
+  }
+  
+  .table-bordered td, .table-bordered th {
+    vertical-align: middle;
+  }
+  .chart-container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  

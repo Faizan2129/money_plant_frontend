@@ -1,6 +1,8 @@
 import React from "react";
 import "./Home.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AboutUsCard from "./AboutUs";
+import ContactUs from "./Contact";
 
 function Home() {
   return (
@@ -12,7 +14,7 @@ function Home() {
           <p className="lead">
             Take control of your finances and grow your wealth effortlessly.
           </p>
-          <a href="./signup" className="btn btn-primary btn-lg mt-3">
+          <a href="./login" className="btn btn-primary btn-lg mt-3">
             Get Started
           </a>
         </div>
@@ -96,7 +98,14 @@ function Home() {
           </div>
         </div>
       </section>
+      <section>
+        <AboutUsCard />
+      </section>
+      <section>
+        <ContactUs />
+      </section>
     </div>
+    
   );
 }
 
